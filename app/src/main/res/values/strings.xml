@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">GitWatcher</string>
+    <string name="set_watcher">Наблюдать</string>
+    <string name="name">имя</string>
 </resources>

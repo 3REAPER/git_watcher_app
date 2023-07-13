@@ -21,7 +21,6 @@ class GitRepositoryImpl: GitRepository {
                 return DataMapper.profileDataListToDomain(body)
             }
             return null
-
         }
     }
 

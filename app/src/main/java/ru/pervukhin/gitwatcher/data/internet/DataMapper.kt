@@ -23,13 +23,15 @@ class DataMapper {
         }
 
         private fun repositoryDataToDomain(repositoryData: RepositoryData): Repository{
+            val dateLastPushed = repositoryData.dateLastPushed ?: repositoryData.dateCreated
+
             return Repository(
                 repositoryData.id,
                 repositoryData.name,
                 repositoryData.description,
                 profileDataToDomain(repositoryData.owner),
-                repositoryData.dataCreated,
-                repositoryData.dateLastPushed
+                repositoryData.dateCreated,
+                dateLastPushed
             )
         }
 

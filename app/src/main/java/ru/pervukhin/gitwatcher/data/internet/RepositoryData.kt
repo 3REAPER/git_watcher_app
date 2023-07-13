@@ -15,12 +15,12 @@ class RepositoryData(
     @SerializedName("owner")
     val owner: ProfileData,
     @SerializedName("created_at")
-    val dataCreated: Date,
+    val dateCreated: Date,
     @SerializedName("pushed_at")
-    val dateLastPushed: Date){
+    val dateLastPushed: Date?){
 
     override fun equals(other: Any?): Boolean {
-        return other is RepositoryData && other.id == id && other.name == name && other.description == description && other.owner == owner && other.dataCreated.time == dataCreated.time && other.dateLastPushed.time == dateLastPushed.time
+        return other is RepositoryData && other.id == id && other.name == name && other.description == description && other.owner == owner && other.dateCreated.time == dateCreated.time && other.dateLastPushed?.time == dateLastPushed?.time
     }
 
     override fun hashCode(): Int {
@@ -28,7 +28,7 @@ class RepositoryData(
         result += 31 * name.hashCode()
         result += 31 * description.hashCode()
         result += 31 * owner.hashCode()
-        result += 31 * dataCreated.hashCode()
+        result += 31 * dateCreated.hashCode()
         result += 31 * dateLastPushed.hashCode()
         return result
     }
